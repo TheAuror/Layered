@@ -48,6 +48,18 @@ namespace LayeredSolution.Szamlazo.OrderViews
         {
             if(e.KeyCode == Keys.Enter)
             {
+                if(int.Parse(ProductQuantityTextBox.Text) < 0)
+                {
+                    ProductQuantityTextBox.Focus();
+                    ProductQuantityTextBox.SelectAll();
+                    return;
+                }
+                if (ProductModel == null)
+                {
+                    ProductNoTextBox.Focus();
+                    ProductNoTextBox.SelectAll();
+                    return;
+                }
                 _newOrderViewModel.Order.OrderItems.Add(new OrderItemModel
                 {
                     OrderId = _newOrderViewModel.Order.Id,
@@ -58,11 +70,21 @@ namespace LayeredSolution.Szamlazo.OrderViews
                     ProductName = ProductModel.Name,
                     ProductNo = ProductModel.ProductNo
                 });
+                ProductNoTextBox.Focus();
+                ProductNoTextBox.SelectAll();
             }
         }
 
         private void OKButton_Click(object sender, EventArgs e)
         {
+            if(_newOrderViewModel.Order.OrderItems == null
+            || string.IsNullOrWhiteSpace(NameTextBox.Text)
+            || string.IsNullOrWhiteSpace(AdressTextBox.Text)
+            || string.IsNullOrWhiteSpace(EmailTextBox.Text))
+            {
+                MessageBox.Show("Hibás rendelés");
+                return;
+            }
             DialogResult = DialogResult.OK;
             _newOrderViewModel.CreateOrder();
             Close();

@@ -38,10 +38,6 @@
             this.SumPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.orderItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.újRendelésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +47,10 @@
             this.orderIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.újRendelésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.orderGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -61,6 +61,7 @@
             // orderGridView
             // 
             this.orderGridView.AllowUserToAddRows = false;
+            this.orderGridView.AllowUserToDeleteRows = false;
             this.orderGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.orderGridView.AutoGenerateColumns = false;
@@ -75,6 +76,7 @@
             this.SumPrice});
             this.orderGridView.DataSource = this.orderBindingSource;
             this.orderGridView.Location = new System.Drawing.Point(12, 27);
+            this.orderGridView.MultiSelect = false;
             this.orderGridView.Name = "orderGridView";
             this.orderGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.orderGridView.Size = new System.Drawing.Size(783, 187);
@@ -145,37 +147,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(783, 186);
             this.dataGridView2.TabIndex = 4;
             // 
-            // orderItemBindingSource
-            // 
-            this.orderItemBindingSource.DataMember = "OrderItems";
-            this.orderItemBindingSource.DataSource = this.orderBindingSource;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 221);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Tételek:";
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.újRendelésToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(807, 24);
-            this.menuStrip1.TabIndex = 6;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // újRendelésToolStripMenuItem
-            // 
-            this.újRendelésToolStripMenuItem.Name = "újRendelésToolStripMenuItem";
-            this.újRendelésToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
-            this.újRendelésToolStripMenuItem.Text = "Új rendelés";
-            this.újRendelésToolStripMenuItem.Click += new System.EventHandler(this.újRendelésToolStripMenuItem_Click);
-            // 
             // productNameDataGridViewTextBoxColumn
             // 
             this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
@@ -234,6 +205,37 @@
             this.productIdDataGridViewTextBoxColumn.HeaderText = "ProductId";
             this.productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
             this.productIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // orderItemBindingSource
+            // 
+            this.orderItemBindingSource.DataMember = "OrderItems";
+            this.orderItemBindingSource.DataSource = this.orderBindingSource;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 221);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Tételek:";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.újRendelésToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(807, 24);
+            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // újRendelésToolStripMenuItem
+            // 
+            this.újRendelésToolStripMenuItem.Name = "újRendelésToolStripMenuItem";
+            this.újRendelésToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.újRendelésToolStripMenuItem.Text = "Új rendelés";
+            this.újRendelésToolStripMenuItem.Click += new System.EventHandler(this.újRendelésToolStripMenuItem_Click);
             // 
             // OrdersForm
             // 

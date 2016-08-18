@@ -15,7 +15,8 @@ namespace LayeredSolution.Szamlazo
 {
     public partial class OrdersForm : Form
     {
-        private readonly IOrderService _service;
+        private readonly IOrderService _service; 
+
         public OrdersForm(IOrderService orderService)
         {
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace LayeredSolution.Szamlazo
         {
             var lifetimeScope = Program.Container.BeginLifetimeScope();
             var form = lifetimeScope.Resolve<NewOrderForm>();
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = MdiParent;
             form.WindowState = FormWindowState.Maximized;
             form.Show();
             form.Closed += delegate
