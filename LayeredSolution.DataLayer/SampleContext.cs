@@ -37,5 +37,15 @@ namespace LayeredSolution.DataLayer
         {
             get { return Set<EmployeeEntity>(); }
         }
+        public IDbSet<Warehouse> Warehouses
+        {
+            get { return Set<Warehouse>(); }
+        }
+        /* New Schema
+         * New IDbSet in SampleContext and ISampleContext
+         * Add-Migration
+         *  Name: nameof(New Schema)
+         * Update-Database
+         */ 
     }
 }

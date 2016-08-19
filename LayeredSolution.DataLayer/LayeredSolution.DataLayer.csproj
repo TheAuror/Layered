@@ -65,12 +65,17 @@
     <Compile Include="Migrations\201608090800532_Employees.Designer.cs">
       <DependentUpon>201608090800532_Employees.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608182100101_Warehouse.cs" />
+    <Compile Include="Migrations\201608182100101_Warehouse.Designer.cs">
+      <DependentUpon>201608182100101_Warehouse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Schema\OrderItem.cs" />
     <Compile Include="Schema\Order.cs" />
     <Compile Include="Schema\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SampleContext.cs" />
+    <Compile Include="Schema\Warehouse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -82,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201608090800532_Employees.resx">
       <DependentUpon>201608090800532_Employees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608182100101_Warehouse.resx">
+      <DependentUpon>201608182100101_Warehouse.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

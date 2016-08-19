@@ -10,6 +10,7 @@ namespace LayeredSolution.DataLayer
         IDbSet<Order> Orders { get; }
         IDbSet<OrderItem> OrderItems { get; }
         IDbSet<EmployeeEntity> Employees { get; }
+        IDbSet<Warehouse> Warehouses { get; }
 
         int SaveChanges();
     }
