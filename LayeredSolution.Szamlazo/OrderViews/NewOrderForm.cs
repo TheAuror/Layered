@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LayeredSolution.BusinessLayer.OrderModels;
+using LayeredSolution.BusinessLayer.ProductModels;
 
 namespace LayeredSolution.Szamlazo.OrderViews
 {

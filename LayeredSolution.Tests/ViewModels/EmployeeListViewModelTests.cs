@@ -14,13 +14,13 @@ namespace LayeredSolution.Tests.ViewModels
     {
         private EmployeeListViewModel _employeeListViewModel;
         private Mock<IEmployeeService> _employeeServiceMock;
-        private List<EmployeeModel> employees;
+        private List<EmployeeModel> _employees;
         [SetUp]
         public void SetUp()
         {
             _employeeServiceMock = new Mock<IEmployeeService>();
-            employees = Builder<EmployeeModel>.CreateListOfSize(10).Build().ToList();
-            _employeeServiceMock.Setup(service => service.GetEmployees()).Returns(employees);
+            _employees = Builder<EmployeeModel>.CreateListOfSize(10).Build().ToList();
+            _employeeServiceMock.Setup(service => service.GetEmployees()).Returns(_employees);
             _employeeListViewModel = new EmployeeListViewModel(_employeeServiceMock.Object);
         }
 
@@ -29,7 +29,7 @@ namespace LayeredSolution.Tests.ViewModels
         {
             _employeeListViewModel.LoadEmployees();
             _employeeListViewModel.Employees.Should().NotBeNull();
-            _employeeListViewModel.Employees.Should().HaveCount(employees.Count);
+            _employeeListViewModel.Employees.Should().HaveCount(_employees.Count);
             _employeeListViewModel.Employees.Should().HaveCount(10);
         }
 

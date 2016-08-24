@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Autofac;
+using LayeredSolution.BusinessLayer.OrderModels;
+using LayeredSolution.BusinessLayer.ProductModels;
 using LayeredSolution.DataLayer;
 
 namespace LayeredSolution.BusinessLayer

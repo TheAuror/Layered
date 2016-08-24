@@ -4,6 +4,7 @@ using LayeredSolution.DataLayer;
 using LayeredSolution.DataLayer.Schema;
 using System.ComponentModel;
 using System;
+using LayeredSolution.BusinessLayer.OrderModels;
 
 namespace LayeredSolution.BusinessLayer
 {

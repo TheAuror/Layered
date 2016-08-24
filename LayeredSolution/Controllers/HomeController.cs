@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using LayeredSolution.BusinessLayer;
 using LayeredSolution.Models;
 using System.ComponentModel;
+using LayeredSolution.BusinessLayer.OrderModels;
+using LayeredSolution.BusinessLayer.ProductModels;
 
 namespace LayeredSolution.Controllers
 {

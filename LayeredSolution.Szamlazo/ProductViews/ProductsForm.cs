@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LayeredSolution.BusinessLayer;
+using LayeredSolution.BusinessLayer.ProductModels;
 using LayeredSolution.DataLayer.Schema;
 
 namespace LayeredSolution.Szamlazo
