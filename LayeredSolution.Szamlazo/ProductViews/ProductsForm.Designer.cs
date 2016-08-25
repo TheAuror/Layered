@@ -124,7 +124,6 @@
             this.Controls.Add(this.productsGridView);
             this.Name = "ProductsForm";
             this.Text = "ProductsForm";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ProductsForm_FormClosed);
             this.Load += new System.EventHandler(this.ProductsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productsGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productModelBindingSource)).EndInit();

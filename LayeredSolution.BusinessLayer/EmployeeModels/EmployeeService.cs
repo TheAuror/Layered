@@ -19,20 +19,10 @@ namespace LayeredSolution.BusinessLayer.EmployeeModels
 
         public List<EmployeeModel> GetEmployees()
         {
-            List<EmployeeModel> list = new List<EmployeeModel>();
-            foreach(var i in _sampleContext.Employees)
+            return _sampleContext.Employees.Select(i => new EmployeeModel()
             {
-                list.Add(new EmployeeModel()
-                {
-                    Id = i.Id,
-                    Name = i.Name,
-                    UserName = i.UserName,
-                    Role = i.Role,
-                    Password = null,
-                    Position = i.Position
-                });
-            }
-            return list;
+                Id = i.Id, Name = i.Name, UserName = i.UserName, Role = i.Role, Password = null, Position = i.Position
+            }).ToList();
         }
 
         public bool IsInRole(EmployeeModel user, string role)
@@ -64,20 +54,23 @@ namespace LayeredSolution.BusinessLayer.EmployeeModels
             EmployeeEntity employeeEntity;
             if(employee.Id > 0)
             {
-                employeeEntity = _sampleContext.Employees.Where(e => e.Id == employee.Id).FirstOrDefault();
+                employeeEntity = _sampleContext.Employees.FirstOrDefault(e => e.Id == employee.Id);
             }
             else
             {
                 employeeEntity = new EmployeeEntity();
                 _sampleContext.Employees.Add(employeeEntity);
             }
-            employeeEntity.Name = employee.Name;
-            employeeEntity.Position = employee.Position;
-            employeeEntity.Role = employee.Role;
-            employeeEntity.UserName = employee.UserName;
-            if (!string.IsNullOrEmpty(employee.Password))
+            if (employeeEntity != null)
             {
-                employeeEntity.Password = PasswordHelper.EncryptPassword(employee.Password);
+                employeeEntity.Name = employee.Name;
+                employeeEntity.Position = employee.Position;
+                employeeEntity.Role = employee.Role;
+                employeeEntity.UserName = employee.UserName;
+                if (!string.IsNullOrEmpty(employee.Password))
+                {
+                    employeeEntity.Password = PasswordHelper.EncryptPassword(employee.Password);
+                }
             }
             _sampleContext.SaveChanges();
         }

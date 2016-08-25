@@ -43,7 +43,7 @@ namespace LayeredSolution.DataLayer
         }
         /* New Schema
          * New IDbSet in SampleContext and ISampleContext
-         * Add-Migration
+         * Add-Migration dsfdsfd
          *  Name: nameof(New Schema)
          * Update-Database
          */ 

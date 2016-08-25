@@ -13,7 +13,7 @@ namespace LayeredSolution.DataLayer.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201608182100101_Warehouse"; }
+            get { return "201608190639504_Warehouse"; }
         }
         
         string IMigrationMetadata.Source

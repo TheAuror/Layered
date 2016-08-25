@@ -26,10 +26,6 @@ namespace LayeredSolution.Szamlazo
             productModelBindingSource.DataSource = _productService.GetProductEditModel();
         }
 
-        private void ProductsForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             _productService.SaveProduct();
