@@ -1,4 +1,4 @@
-﻿namespace LayeredSolution.BusinessLayer
+﻿namespace LayeredSolution.BusinessLayer.ProductModels
 {
     public class ProductModel
     {

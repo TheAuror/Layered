@@ -1,6 +1,4 @@
-﻿using LayeredSolution.DataLayer;
-
-namespace LayeredSolution.BusinessLayer
+﻿namespace LayeredSolution.BusinessLayer.OrderModels
 {
     public class OrderItemModel
     {
@@ -12,12 +10,6 @@ namespace LayeredSolution.BusinessLayer
         public virtual int Price { get; set; }
         public string ProductName { get; set; }
         public string ProductNo { get; set; }
-        public int SumPrice
-        {
-            get
-            {
-                return Quantity*Price;
-            }
-        }
+        public int SumPrice => Quantity*Price;
     }
 }

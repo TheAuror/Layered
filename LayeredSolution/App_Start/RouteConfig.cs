@@ -7,6 +7,7 @@ using System.Web.Routing;
 using Autofac;
 using Autofac.Integration.Mvc;
 using LayeredSolution.BusinessLayer;
+using LayeredSolution.BusinessLayer.ProductModels;
 using LayeredSolution.Controllers;
 using LayeredSolution.DataLayer;
 

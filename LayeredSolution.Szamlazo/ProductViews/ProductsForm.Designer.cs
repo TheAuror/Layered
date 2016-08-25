@@ -1,4 +1,6 @@
-﻿namespace LayeredSolution.Szamlazo
+﻿using LayeredSolution.BusinessLayer.ProductModels;
+
+namespace LayeredSolution.Szamlazo
 {
     partial class ProductsForm
     {
@@ -59,7 +61,7 @@
             // 
             // productModelBindingSource
             // 
-            this.productModelBindingSource.DataSource = typeof(LayeredSolution.BusinessLayer.ProductModel);
+            this.productModelBindingSource.DataSource = typeof(ProductModel);
             // 
             // button1
             // 

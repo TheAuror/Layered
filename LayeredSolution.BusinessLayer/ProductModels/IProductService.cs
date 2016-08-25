@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace LayeredSolution.BusinessLayer
+namespace   LayeredSolution.BusinessLayer.ProductModels
 {
     public interface IProductService
     {

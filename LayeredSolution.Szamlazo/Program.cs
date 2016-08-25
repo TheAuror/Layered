@@ -7,6 +7,8 @@ using Autofac;
 using LayeredSolution.BusinessLayer;
 using LayeredSolution.DataLayer;
 using LayeredSolution.BusinessLayer.EmployeeModels;
+using LayeredSolution.BusinessLayer.OrderModels;
+using LayeredSolution.BusinessLayer.ProductModels;
 using LayeredSolution.Szamlazo.EmployeeViews;
 using LayeredSolution.Szamlazo.OrderViews;
 

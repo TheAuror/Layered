@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LayeredSolution.BusinessLayer.ProductModels;
 using LayeredSolution.DataLayer;
 using LayeredSolution.DataLayer.Schema;
 
