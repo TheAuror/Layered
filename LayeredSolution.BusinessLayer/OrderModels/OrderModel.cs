@@ -12,19 +12,7 @@ namespace LayeredSolution.BusinessLayer
         public virtual string BuyerEmail { get; set; }
         public virtual string BuyerAddress { get; set; }
         public virtual BindingList<OrderItemModel> OrderItems { get; set; } = new BindingList<OrderItemModel>();
-        public int SumPrice
-        {
-            get
-            {
-                return OrderItems.Sum(e => e.Price * e.Quantity);
-            }
-        }
-        public int SumQuantity
-        {
-            get
-            {
-                return OrderItems.Sum(e => e.Quantity);
-            }
-        }
+        public int SumPrice => OrderItems.Sum(e => e.Price * e.Quantity);
+        public int SumQuantity => OrderItems.Sum(e => e.Quantity);
     }
 }

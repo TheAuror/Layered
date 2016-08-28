@@ -18,29 +18,15 @@ namespace LayeredSolution.DataLayer
             
         }
 
-        public IDbSet<Product> Products
-        {
-            get { return Set<Product>(); }
-        }
+        public IDbSet<Product> Products => Set<Product>();
 
-        public IDbSet<Order> Orders
-        {
-            get { return Set<Order>(); }
-        }
+        public IDbSet<Order> Orders => Set<Order>();
 
-        public IDbSet<OrderItem> OrderItems
-        {
-            get { return Set<OrderItem>(); }
-        }
+        public IDbSet<OrderItem> OrderItems => Set<OrderItem>();
 
-        public IDbSet<EmployeeEntity> Employees
-        {
-            get { return Set<EmployeeEntity>(); }
-        }
-        public IDbSet<Warehouse> Warehouses
-        {
-            get { return Set<Warehouse>(); }
-        }
+        public IDbSet<EmployeeEntity> Employees => Set<EmployeeEntity>();
+
+        public IDbSet<Warehouse> Warehouses => Set<Warehouse>();
         /* New Schema
          * New IDbSet in SampleContext and ISampleContext
          * Add-Migration dsfdsfd

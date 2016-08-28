@@ -1,13 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LayeredSolution.BusinessLayer.ProductModels;
 using LayeredSolution.DataLayer;
 using LayeredSolution.DataLayer.Schema;
 
-namespace LayeredSolution.BusinessLayer
+namespace LayeredSolution.BusinessLayer.ProductModels
 {
     public class ProductService : BaseService, IProductService
     {
@@ -35,11 +32,7 @@ namespace LayeredSolution.BusinessLayer
 
         public BindingList<ProductModel> GetProductEditModel()
         {
-            if (_productModels == null)
-            {
-                _productModels = new BindingList<ProductModel>(GetAllProduct(null));
-            }
-            return _productModels;
+            return _productModels ?? (_productModels = new BindingList<ProductModel>(GetAllProduct(null)));
         }
 
         public void SaveProduct()
@@ -59,6 +52,7 @@ namespace LayeredSolution.BusinessLayer
                     productRows.Add(productRow);
                     Context.Products.Add(productRow);
                 }
+                if (productRow == null) continue;
                 productRow.Name = productModel.Name;
                 productRow.ProductNo = productModel.ProductNo;
                 productRow.Price = productModel.Price;
